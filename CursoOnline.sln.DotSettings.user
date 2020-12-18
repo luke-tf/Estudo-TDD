@@ -3,5 +3,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::11B56484-311B-4FE1-A5EE-DE7914871FAF::.NETCoreApp,Version=v3.1::CursoOnline.DominioTest.MeuPrimeiroTeste.Testar&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::11B56484-311B-4FE1-A5EE-DE7914871FAF::.NETCoreApp,Version=v3.1::CursoOnline.DominioTest.Cursos.CursoTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::11B56484-311B-4FE1-A5EE-DE7914871FAF::.NETCoreApp,Version=v3.1::CursoOnline.DominioTest.Cursos.ArmazenadorDeCursoTest.DeveAdicionarCurso&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::11B56484-311B-4FE1-A5EE-DE7914871FAF::.NETCoreApp,Version=v3.1::CursoOnline.DominioTest.Cursos.ArmazenadorDeCursoTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using Bogus;
 using CursoOnline.DominioTest._Builders;
 using CursoOnline.DominioTest._util;
 using ExpectedObjects;
@@ -20,12 +21,13 @@ namespace CursoOnline.DominioTest.Cursos
         {
             _output = output;
             _output.WriteLine("Construtor sendo executado");
+            var faker = new Faker();
 
-            _nome = "Informática Básica";
-            _cargaHoraria = 80;
+            _nome = faker.Random.Word();
+            _cargaHoraria = faker.Random.Double(50,1000);
             _publicoAlvo = PublicoAlvo.Estudante;
-            _valor = 950;
-            _descricao = "Uma descrição";
+            _valor = faker.Random.Double(100,1000);
+            _descricao = faker.Lorem.Paragraph();
         }
 
         public void Dispose()
@@ -88,41 +90,5 @@ namespace CursoOnline.DominioTest.Cursos
                 CursoBuilder.Novo().ComValor(valorInvalido).Build())
                 .ComMensagem("Valor inválido");
         }
-    }
-
-    public enum PublicoAlvo
-    {
-        Estudante,
-        Universitario,
-        Empregado,
-        Empreendedor
-    }
-    
-
-    public class Curso
-    {
-        public Curso(string nome, double cargaHoraria, PublicoAlvo publicoAlvo, double valor,string descricao)
-        {
-            if (string.IsNullOrEmpty(nome))
-                throw new ArgumentException("Nome inválido");
-
-            if (cargaHoraria < 1)
-                throw new ArgumentException("Carga horária inválida");
-
-            if (valor < 1)
-                throw new ArgumentException("Valor inválido");
-            
-            Nome = nome;
-            CargaHoraria = cargaHoraria;
-            PublicoAlvo = publicoAlvo;
-            Valor = valor;
-            Descricao = descricao;
-        }
-
-        public string Nome { get; private set; }
-        public double CargaHoraria { get; private set; }
-        public PublicoAlvo PublicoAlvo { get; private set; }
-        public double Valor { get; private set; }
-        public string Descricao { get; private set; }
     }
 }
